@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMA PGRI 2 Banjarmasin</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+:root{
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --muted:#6b7280;
+    --accent:#007bff;
+    --accent-2:#4CAF50;
+    --primary:#0b73ff;
+    --dark:#0b1220;
+}
+
+*{box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    background:var(--bg);
+    color:var(--dark);
+}
+
+.site-header{
+    background: linear-gradient(90deg, rgba(11, 115, 255, 0.8), rgba(0, 86, 179, 0.8)), url('b.jpg') center/cover no-repeat;
+    color:#fff;
+    padding:15px 20px;
+}
+
+.header-inner{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    width:55px;
+    border-radius:8px;
+}
+
+.main-nav{
+    margin-left:auto;
+}
+
+.main-nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:15px;
+    font-weight:600;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.hero-title{
+    text-align:center;
+    font-size:42px;
+}
+
+.sub-hero{
+    text-align:center;
+    color:var(--muted);
+}
+
+.big-img {
+    display: block;
+    margin: 40px auto;
+    width: 800px;       
+}
+
+hr{margin:30px 0}
+
+/* ACCORDION CSS */
+.accordion-item{
+    margin-bottom:10px;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.accordion-item input{
+    display:none;
+}
+
+.accordion-label{
+    display:block;
+    padding:15px;
+    background:#f3f6ff;
+    font-weight:600;
+    cursor:pointer;
+    position:relative;
+}
+
+.accordion-label::after{
+    content:"+";
+    position:absolute;
+    right:20px;
+    font-size:20px;
+}
+
+.accordion-item input:checked + .accordion-label::after{
+    content:"−";
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:0.3s ease;
+    background:#fff;
+    padding:0 15px;
+}
+
+.accordion-item input:checked ~ .accordion-content{
+    max-height:200px;
+    padding:15px;
+}
+
+.accordion-content a{
+    color:var(--accent-2);
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* CONTACT */
+.contact-section{
+    background:#0f1724;
+    color:#fff;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.contact-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.contact-item{
+    background:#fff;
+    color:#000;
+    padding:15px;
+    border-radius:10px;
+    width:180px;
+}
+
+.contact-item img{
+    width:50px;
+}
+
+.contact-item a{
+    color:var(--accent);
+    text-decoration:none;
+}
+
+.footer{
+    background:#000;
+    color:#ccc;
+    text-align:center;
+    padding:15px;
+}
+
+@media(max-width:768px){
+    .hero-title{font-size:28px}
+}
+
+.accordion-container {
+margin: 20px 0;
+border: 1px solid #ddd;
+border-radius: 8px;
+overflow: hidden;
+background-color: #fff;
+}
+
+.accordion {
+background-color:gray;
+color: white;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+border: none;
+text-align: left;
+outline: none;
+font-size: 16px;
+font-weight: bold;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: 0.3s;
+border-bottom: 1px solid #ddd;
+}
+
+.accordion:hover {
+background-color:#0b73ff;
+}
+
+.accordion-title {
+flex: 1;
+}
+
+.accordion-icon {
+font-size: 20px;
+transition: 0.3s;
+}
+
+.accordion.active .accordion-icon {
+transform: rotate(45deg);
+}
+
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out;
+background-color: #f1f1f1;
+}
+
+.accordion.active ~ .accordion-content {
+max-height: 500px;
+}
+
+.content-text {
+padding: 18px 20px;
+color: #333;
+line-height: 1.6;
+}
+
+.accordion-link {
+color: #4CAF50;
+text-decoration: none;
+font-weight: bold;
+margin-top: 10px;
+display: inline-block;
+}
+
+.accordion-link:hover {
+text-decoration: underline;
+color: #45a049;
+}
+
+ .main-nav a {
+color: white;
+text-decoration: none;
+margin-left: 15px;
+font-weight: 600;
+padding: 8px 12px;
+border-radius: 6px;
+transition: 0.3s ease;
+}
+
+.main-nav a:hover {
+background-color: white;
+color: #0b73ff;
+}
+
+.container-link {
+text-align: center;
+}
+
+
+/* Map layout */
+.map-row{
+display:flex;
+gap:20px;
+align-items:flex-start;
+margin-top:15px;
+}
+.map-frame{ 
+flex:1 1 60%;
+}
+.map-panel{
+flex:0 0 320px;
+background:#fff;
+padding:15px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+@media (max-width:768px){
+.map-row{ flex-direction:column; }
+.map-panel{ width:100%; flex-basis:auto; }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* Button style for gallery link */
+.btn-submit{
+    display:inline-block;
+    background:var(--primary);
+    color:#fff;
+    padding:10px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 6px 16px rgba(11,115,255,0.12);
+    transition:transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.btn-submit:hover,.btn-submit:focus{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(11,115,255,0.16);
+    background-color:#0b65e6;
+    color:#fff;
+}
+.btn-submit:active{transform:translateY(0)}
+
+/* LIFE SKILL: grid kartu yang menarik (hanya HTML + CSS) */
+.life-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:18px;
+}
+.life-card{
+    background:var(--card);
+    border-radius:12px;
+    padding:18px;
+    box-shadow:0 8px 20px rgba(15,23,36,0.06);
+    transition:transform .25s ease, box-shadow .25s ease;
+    overflow:hidden;
+    position:relative;
+}
+.life-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(11,115,255,0.08)}
+.life-card .icon{
+    font-size:30px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:56px;height:56px;border-radius:10px;
+    background:linear-gradient(135deg, rgba(11,115,255,0.10), rgba(11,115,255,0.04));
+    color:var(--primary);
+    margin-bottom:12px;
+}
+.life-card h4{margin:6px 0 8px;font-size:18px}
+.life-card p{margin:0 0 12px;color:var(--muted);line-height:1.5}
+.life-card .actions{display:flex;gap:10px;align-items:center}
+.life-card .detail{color:var(--primary);text-decoration:none;font-weight:600}
+.life-card .tag{margin-left:auto;background:#f3f6ff;color:var(--primary);padding:6px 8px;border-radius:8px;font-size:13px}
+
+@media(max-width:480px){
+    .life-card{padding:14px}
+    .life-card .icon{width:48px;height:48px}
+}
+
+</style>
+<!-- Script: fungsi accordion -->
+<script>
+    function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        button.classList.toggle("active");
+
+        if (button.classList.contains("active")) {
+            content.style.maxHeight = "500px";
+        } else {
+            content.style.maxHeight = "0";
+        }
+    }
+</script>
+
+</head>
+
+<body>
+<a href="#" class="back-to-top">↑</a>
+
+<header class="site-header">
+<div class="header-inner">
+<img src="pg2.png" class="logo">
+<div style="margin-left:10px">
+<b>SMA PGRI 2 Banjarmasin</b><br>
+<small>Terakreditasi A</small>
+</div>
+<nav class="main-nav">
+<a href="#">Beranda</a>
+<a href="#life">Life Skill</a>
+<a href="#lokasi">Lokasi</a>
+<a href="#lokasi">Galeri</a>
+<a href="Daftar.html">Daftar</a>
+<a href="#kontak">Kontak</a>
+
+</nav>
+</div>
+</header>
+
+<div class="container">
+
+<h1 class="hero-title">Selamat Datang</h1>
+<p class="sub-hero">SMA PGRI 2 Banjarmasin — Terakreditasi A (Unggul)</p>
+<img src="pg2-removebg.png" class="big-img">
+
+
+
+<section id="life">
+    <!-- Life Skill: grid kartu-->
+    <h3>Program Life Skill Kami</h3>
+    <p style="color:var(--muted);margin-top:6px;">Pilih program yang sesuai minat — klik "Lihat Detail" untuk informasi lengkap.</p>
+
+    <div class="life-grid">
+        <!-- Kartu 1 -->
+        <article class="life-card">
+            <div class="icon">📚</div>
+            <h4>Life Skill TKJ</h4>
+            <p>Pelatihan teknologi informasi, jaringan, dan pemeliharaan perangkat keras.</p>
+            <div class="actions">
+                <a class="detail" href="Life Skill TKJ.html">Lihat Detail →</a>
+                <span class="tag">Populer</span>
+            </div>
+        </article>
+
+        <!-- Kartu 2 -->
+        <article class="life-card">
+            <div class="icon">👗</div>
+            <h4>Life Skill Tata Busana</h4>
+            <p>Desain busana, menjahit, pola, dan produksi pakaian profesional.</p>
+            <div class="actions">
+                <a class="detail" href="Life Skill Tata Busana.html">Lihat Detail →</a>
+            </div>
+        </article>
+
+        <!-- Kartu 3 -->
+        <article class="life-card">
+            <div class="icon">🌱</div>
+            <h4>Life Skill Hidroponik</h4>
+            <p>Budidaya tanaman tanpa tanah menggunakan teknik modern dan ramah lingkungan.</p>
+            <div class="actions">
+                <a class="detail" href="Life Skill Hidroponik.html">Lihat Detail →</a>
+            </div>
+        </article>
+
+        <!-- Kartu 4 -->
+        <article class="life-card">
+            <div class="icon">🔧</div>
+            <h4>Life Skill Otomotif</h4>
+            <p>Perawatan dan perbaikan kendaraan sesuai standar industri otomotif.</p>
+            <div class="actions">
+                <a class="detail" href="Life Skill Otomotif.html">Lihat Detail →</a>
+            </div>
+        </article>
+
+        <!-- Kartu 5 -->
+        <article class="life-card">
+            <div class="icon">🎨</div>
+            <h4>Life Skill Musik Panting</h4>
+            <p>Pengembangan keterampilan musik tradisional dan pertunjukan.</p>
+            <div class="actions">
+                <a class="detail" href="Life Skill Panting.html">Lihat Detail →</a>
+            </div>
+        </article>
+
+        <!-- Kartu 6 -->
+        <article class="life-card">
+            <div class="icon">📷</div>
+            <h4>Life Skill Fotografer</h4>
+            <p>Teknik fotografi, komposisi, dan editing untuk kebutuhan profesional.</p>
+            <div class="actions">
+                <a class="detail" href="Life Skill Fotografer.html">Lihat Detail →</a>
+            </div>
+        </article>
+    </div>
+
+</section>
+
+            
+<section id="lokasi">
+<h3>Lokasi Sekolah</h3>
+<div class="map-row">
+    <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0790733291265!2d114.57370507587193!3d-3.330641641279973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de4217e1fda636f%3A0x5d6b94ac1dc18e08!2sSMA%20PGRI%202%20Banjarmasin!5e0!3m2!1sid!2sid"
+        width="100%" height="375" style="border:0;border-radius:10px;" loading="lazy"></iframe>
+    </div>
+        <aside class="map-panel">
+            <!-- Panel informasi: gambar dan alasan kunjungan -->
+            <img src="pg2-removebg.png" alt="Sekolah" style="width:100%;border-radius:8px;margin-bottom:12px;">
+            <h4 style="margin:6px 0 8px 0;">Kenapa Kunjungi Kami?</h4>
+            <ul style="margin:0 0 12px 18px;color:#333;">
+            <li>Laboratorium & Ruang Praktik Lengkap</li>
+            <li>Program Life Skill Terintegrasi</li>
+            <li>Ekstrakurikuler dan fasilitas olahraga</li>
+        </ul>
+        <a href="Smapg2 galeri.html" class="btn-submit">Lihat Galeri</a>
+    </aside>
+</div>
+</section>
+
+</div>
+
+            
+
+
+<section class="contact-section" id="kontak">
+<h3>Hubungi Kami</h3>
+<div class="contact-container">
+
+<div class="contact-item">
+<img src="https://img.icons8.com/color/96/000000/whatsapp--v1.png">
+<p>WhatsApp</p>
+<a href="https://wa.me/6285780954513">0851-6567-2215</a>
+</div>
+
+<div class="contact-item">
+<img src="https://img.icons8.com/color/96/000000/facebook.png" alt="Facebook">
+<p>Facebook</p>
+<a href="https://facebook.com/Smapgridua Banjarmasin" target="_blank" rel="noopener noreferrer">Smapgridua Banjarmasin</a>
+</div>
+
+ <div class="contact-item">
+<img src="https://img.icons8.com/color/96/000000/instagram-new.png" alt="Instagram">
+<p>Instagram</p>
+<a href="https://instagram.com/smapgri02" target="_blank" rel="noopener noreferrer">smapgri02</a>
+</div>
+
+<div class="contact-item">
+<img src="https://img.icons8.com/color/96/000000/phone.png" alt="Telepon">
+<p>Telepon</p>
+<a href="tel:0511-4425142">0511-4425142</a>
+</div>
+
+<div class="contact-item">
+<img src="https://img.icons8.com/color/96/000000/gmail--v2.png" alt="Email">
+<p>Email</p>
+<a href="mailto:smapgriduabjm @gmail.com">smapgriduabjm @gmail.com</a>
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+&copy; 2026 SMA PGRI 2 Banjarmasin. Hendra Maulana dan tim. Semua hak cipta dilindungi.
+</footer>
+
+
+</body>
+</html>

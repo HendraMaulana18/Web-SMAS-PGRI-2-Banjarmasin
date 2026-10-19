@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Galeri - SMA PGRI 2 Banjarmasin</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+		/* Variables */
+		:root{
+			--bg: #f6f8fb;
+			--card: #ffffff;
+			--accent: #0b73ff;
+			--muted: #6b7280;
+			--shadow: 0 6px 18px rgba(11,115,255,0.06);
+		}
+
+		/* Base */
+		*{box-sizing:border-box}
+		body{
+			font-family: 'Poppins', sans-serif;
+			margin:0;
+			background:var(--bg);
+			color:#0b1220;
+		}
+
+		.container{width:60%;max-width:1100px;min-width:320px;margin:30px auto;padding:20px}
+
+		/* Header */
+		.header{display:flex;align-items:center;gap:16px}
+		.logo{width:64px;border-radius:8px}
+		h1{margin:0;font-size:26px}
+		p.lead{color:var(--muted);margin:8px 0 20px}
+
+		/* Gallery - vertical stack */
+		.gallery{
+			display:flex;
+			flex-direction:column;
+			gap:18px;
+		}
+
+		.card{
+			background:var(--card);
+			border-radius:12px;
+			overflow:hidden;
+			box-shadow:var(--shadow);
+			display:flex;
+			flex-direction:column;
+		}
+
+		.card img{
+			width:100%;
+			height:200px;
+			object-fit:cover;
+			display:block;
+			transition:transform .35s ease;
+		}
+
+		.card:hover img{transform:scale(1.04)}
+
+		/* Caption placed under image for vertical flow */
+		.caption{
+			padding:12px 14px;
+			font-weight:700;
+			color:var(--muted);
+			background:linear-gradient(180deg,rgba(11,115,255,0.02),transparent);
+		}
+
+		/* remove overlay effect (not needed for stacked layout) */
+		.overlay{display:none}
+
+		/* Footer note */
+		.note{margin-top:18px;padding:12px;background:#fff;border-radius:10px;color:var(--muted);font-size:14px}
+
+		/* Small utility button */
+		.btn{display:inline-block;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+
+		/* Responsive adjustments */
+		@media (max-width:700px){
+			.container{width:95%;}
+			.card img{height:240px}
+		}
+
+		@media (max-width:420px){
+			.container{padding:12px;margin:16px auto}
+			.card img{height:200px}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<img src="Logo pgri.png" class="logo" alt="Logo SMA PGRI 2">
+			<div>
+				<h1>Galeri SMA PGRI 2 Banjarmasin</h1>
+				<p class="lead">Koleksi foto kegiatan, fasilitas, dan momen siswa — hanya HTML &amp; CSS.</p>
+			</div>
+		</div>
+
+		<section class="gallery" aria-label="Galeri Foto">
+			<figure class="card">
+				<img src="g1.jpg" alt="Foto 1 - Kegiatan sekolah">
+				<div class="overlay"></div>
+				<figcaption class="caption">Kegiatan Ekstrakurikuler</figcaption>
+			</figure>
+
+			<figure class="card">
+				<img src="g2.jpg" alt="Foto 2 - Laboratorium">
+				<div class="overlay"></div>
+				<figcaption class="caption">Upacara Hari Kemerdekaan</figcaption>
+			</figure>
+
+			<figure class="card">
+				<img src="g3.jpg" alt="Foto 3 - Upacara">
+				<div class="overlay"></div>
+				<figcaption class="caption">Foto Bersama Paskibraka</figcaption>
+			</figure>
+
+			<figure class="card">
+				<img src="g4.jpg" alt="Foto 4 - Kelas">
+				<div class="overlay"></div>
+				<figcaption class="caption">Foto Bersama Guru beserta karyawan</figcaption>
+			</figure>
+
+			<figure class="card">
+				<img src="g5.jpg" alt="Foto 5 - Lapangan olahraga">
+				<div class="overlay"></div>
+				<figcaption class="caption">Pelantikan guru</figcaption>
+			</figure>
+
+			<figure class="card">
+				<img src="g6.jpg" alt="Foto 6 - Foto bersama">
+				<div class="overlay"></div>
+				<figcaption class="caption">Kegiatan Jum'at Takwa</figcaption>
+			</figure>
+		</section>
+
+		<p style="margin-top:18px;"><a href="Tugas 8.6.html" class="btn">Kembali ke Beranda</a></p>
+	</div>
+</body>
+</html>
+

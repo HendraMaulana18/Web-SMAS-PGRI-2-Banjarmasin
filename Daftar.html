@@ -1,0 +1,185 @@
+<style>
+  /* Style Khusus Formulir */
+.form-section {
+    background: #fff;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eef2f7;
+}
+
+.form-section h2 {
+    color: var(--primary);
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.container-link {
+    text-align: left; /* Mengubah teks ke kiri agar lebih rapi di dalam form */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(11, 115, 255, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    background: linear-gradient(90deg, #0b73ff, #0056b3);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(11, 115, 255, 0.2);
+}
+
+/* Enhanced form visuals */
+.form-decor {
+    position: relative;
+    height: 60px;
+    margin-bottom: 18px;
+}
+.form-decor::before,
+.form-decor::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.12;
+}
+.form-decor::before {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(90deg, #0b73ff, #4facfe);
+    left: -20px;
+    top: -40px;
+}
+.form-decor::after {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(90deg, #45a049, #7be495);
+    right: -10px;
+    top: -20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+/* Custom select look */
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #333 50%), linear-gradient(135deg, #333 50%, transparent 50%);
+    background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+@media (max-width:700px) {
+    .form-grid { grid-template-columns: 1fr; }
+}
+
+
+
+</style>
+            
+<section id="Daftar"></section>           
+<section class="form-section">
+    <h2 style="text-align: center;">Formulir Pendaftaran Life Skill</h2>
+    <p style="text-align: center; color: var(--muted); font-size: 14px; margin-bottom: 25px;">Silakan isi data diri Anda dengan benar.</p>
+    
+    <form action="#" method="post">
+        <div class="form-decor"></div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>🧑‍🎓 Nama Lengkap</label>
+                <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <div class="form-group">
+                <label>🏠 Pilihan Kelas</label>
+                <select name="kelas" required>
+                    <option value="">... Pilih Kelas ...</option>
+                    <option value="10">Kelas 10</option>
+                    <option value="11">Kelas 11</option>
+                    <option value="12">Kelas 12</option>
+                </select>
+            </div>
+
+            <div class="form-group full">
+                <label>📍 Alamat Lengkap</label>
+                <textarea name="alamat" rows="3" placeholder="Masukkan alamat domisili" required></textarea>
+            </div>
+
+            <div class="form-group full">
+                <label>🎯 Pilih Program Life Skill</label>
+                <select name="pemesanan" required>
+                    <option value="">... Pilih Program ...</option>
+                    <option value="Life Skill Panting.html">Panting</option>
+                    <option value="Life Skill Tata Busana.html">Busana</option>
+                    <option value="Life Skill Hidroponik.html">Hidro</option>
+                    <option value="Life Skill TKJ.html">TKJ</option>
+                    <option value="Life Skill Otomotif.html">Otomotif</option>
+                    <option value="Life Skill Fotografer.html">Fotografi</option>
+                </select>
+            </div>
+        </div>
+
+        <input type="submit" value="Kirim Pendaftaran" class="btn-submit">
+        <p style="margin-top:18px;"><a href="Tugas 8.6.html" class="btn-submit">Kembali ke Beranda</a></p>
+    </form>
+</section>
+</form>
